@@ -21116,10 +21116,6 @@ var AdapterCore = /*#__PURE__*/function () {
         _this2._dragStartPosition = {
           x: evt.clientX,
           y: evt.clientY,
-          translateX: _this2._translateX,
-          translateY: _this2._translateY,
-          minTranslateX: _this2._minTranslateX,
-          minTranslateY: _this2._minTranslateY
         };
 
         _this2._renderMainClass();
@@ -21401,10 +21397,6 @@ var AdapterCore = /*#__PURE__*/function () {
       this._debouncedPostMessage.call(this, {
         type: this._messageTypes.syncPosition,
         position: {
-          translateX: this._translateX,
-          translateY: this._translateY,
-          minTranslateX: this._minTranslateX,
-          minTranslateY: this._minTranslateY
         }
       });
     }
@@ -21417,10 +21409,6 @@ var AdapterCore = /*#__PURE__*/function () {
           minimized = _ref9.minimized,
           closed = _ref9.closed,
           _ref9$position = _ref9.position,
-          translateX = _ref9$position.translateX,
-          translateY = _ref9$position.translateY,
-          minTranslateX = _ref9$position.minTranslateX,
-          minTranslateY = _ref9$position.minTranslateY,
           dndStatus = _ref9.dndStatus,
           userStatus = _ref9.userStatus,
           telephonyStatus = _ref9.telephonyStatus;
@@ -21428,10 +21416,6 @@ var AdapterCore = /*#__PURE__*/function () {
       this._closed = closed;
 
       if (!this._dragging) {
-        this._translateX = translateX;
-        this._translateY = translateY;
-        this._minTranslateX = minTranslateX;
-        this._minTranslateY = minTranslateY;
       }
 
       this._appWidth = width;
@@ -21467,28 +21451,6 @@ var AdapterCore = /*#__PURE__*/function () {
           minimumY = _this$_calculateMinMa.minimumY,
           maximumX = _this$_calculateMinMa.maximumX,
           maximumY = _this$_calculateMinMa.maximumY;
-
-      if (this._minimized) {
-        var newMinTranslateX = Math.max(Math.min(this._minTranslateX, maximumX), minimumX);
-
-        if (newMinTranslateX !== this._minTranslateX) {
-          this._minTranslateX = newMinTranslateX;
-        }
-
-        var newMinTranslateY = Math.max(Math.min(this._minTranslateY, -minimumY), -maximumY);
-
-        if (newMinTranslateY !== this._minTranslateY) {
-          this._minTranslateY = newMinTranslateY;
-        }
-      } else {
-        var newTranslateX = Math.max(Math.min(this._translateX, maximumX), minimumX);
-        var newTranslateY = Math.max(Math.min(this._translateY, -minimumY), -maximumY);
-
-        if (this._translateX !== newTranslateX || this._translateY !== newTranslateY) {
-          this._translateX = newTranslateX;
-          this._translateY = newTranslateY;
-        }
-      }
 
       this.renderPosition();
     }

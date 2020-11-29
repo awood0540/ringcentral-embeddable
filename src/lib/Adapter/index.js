@@ -293,18 +293,18 @@ class Adapter extends AdapterCore {
       if (this._showDockUI) {
         this._container.setAttribute(
           'style',
-          `transform: translate(0px, ${this._minTranslateY}px)!important; z-index: ${this._zIndex};`,
+          `top: 45px; right: 0;`,
         );
       } else {
         this._container.setAttribute(
           'style',
-          `transform: translate( ${this._minTranslateX * factor}px, ${-this._padding}px)!important;`
+          `top: 45px; right: 0;`,
         );
       }
     } else {
       this._container.setAttribute(
         'style',
-        `transform: translate(${this._translateX * factor}px, ${this._translateY}px)!important; z-index: ${this._zIndex};`,
+          `top: 45px; right: 10px; z-index: ${this._zIndex};`,
       );
     }
   }

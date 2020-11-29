@@ -16,11 +16,11 @@ class Adapter extends AdapterCore {
     iconUrl,
     prefix = 'rc-widget',
     version,
-    appWidth = 300,
-    appHeight = 500,
+    appWidth = 400,
+    appHeight = 'calc(100vh - 45px)',
     zIndex = 999,
-    enableNotification = false,
-    newAdapterUI = false,
+    enableNotification = true,
+    newAdapterUI = true,
   } = {}) {
     const container = document.createElement('div');
     container.id = prefix;

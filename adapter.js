@@ -20832,7 +20832,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 var SANDBOX_ATTRIBUTE_VALUE = ['allow-same-origin', 'allow-scripts', 'allow-forms', 'allow-popups'].join(' '); // chrome 63 mandate the declaration of this attribute for getUserMedia to work in iframes
 
-var ALLOW_ATTRIBUTE_VALUE = ['microphone', 'camera',
+var ALLOW_ATTRIBUTE_VALUE = ['microphone' //'camera',
 ].join(' ');
 var urlRegex = /(https:\/\/)?(?:www\.)?outlook\.office(?:365)?\.com\/(mail)\/(deeplink)/;
 var clickEvent = urlRegex.test(window.location.href) ? 'mousedown' : 'click';
